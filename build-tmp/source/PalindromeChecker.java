@@ -32,8 +32,32 @@ public void setup()
 }
 public boolean palindrome(String word)
 {
-  //your code here
-  return false;
+String noCaps = new String(word.toLowerCase());
+//println(noCaps);
+String noSpace = new String();
+String reversed = new String();
+  for(int i= 0; i<noCaps.length(); i++)
+  {
+    if (Character.isLetter(noCaps.charAt(i))== true)
+    {
+      noSpace += noCaps.charAt(i);
+    }   
+  }
+  //println(noSpace);
+  for(int i= noSpace.length()-1; i>-1; i--)
+  {
+      reversed += noSpace.substring(i,i+1);  
+  }
+  //println(reversed);
+  if (reversed.equals(noSpace))
+    {
+      return true;
+    }
+  else
+  {
+    return false;
+  }
+  
 }
 
   static public void main(String[] passedArgs) {
